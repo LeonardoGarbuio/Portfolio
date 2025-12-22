@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Primary Meta Tags -->
+    <title>Leonardo Garbuio | Desenvolvedor Full-Stack Brasil - Sites, Apps e Sistemas</title>
+    <meta name="title" content="Leonardo Garbuio | Desenvolvedor Full-Stack Brasil - Sites, Apps e Sistemas">
+    <meta name="description"
+        content="Desenvolvedor Full-Stack especializado em criar sites profissionais, aplicações web e sistemas personalizados. React, Next.js, Node.js, TypeScript. Atendimento em todo Brasil. Solicite orçamento grátis!">
+    <meta name="keywords"
+        content="desenvolvedor full-stack, desenvolvedor web, criar site, programador freelancer, desenvolvedor React, Next.js, Node.js, TypeScript, Python, Java, criação de sites, desenvolvimento de sistemas, aplicações web, Brasil, fazer site, site profissional, site para empresa, landing page, e-commerce, loja virtual, sistema para empresa, sistema de gestão, automação, app web, aplicativo web, orçamento site, quanto custa um site, contratar programador, freelancer programação, desenvolvedor JavaScript, frontend, backend">
+    <meta name="author" content="Leonardo Garbuio">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="geo.region" content="BR">
+    <meta name="geo.country" content="Brazil">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://leonardogarbuio.com.br">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leonardogarbuio.com.br">
+    <meta property="og:title" content="Leonardo Garbuio | Desenvolvedor Full-Stack Brasil">
+    <meta property="og:description"
+        content="Desenvolvedor Full-Stack especializado em sites, apps e sistemas. React, Next.js, Node.js. Atendimento em todo Brasil!">
+    <meta property="og:image" content="https://leonardogarbuio.com.br/imagens/og-image.png">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Leonardo Garbuio - Dev Full-Stack">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://leonardogarbuio.com.br">
+    <meta property="twitter:title" content="Leonardo Garbuio | Desenvolvedor Full-Stack Brasil">
+    <meta property="twitter:description"
+        content="Desenvolvedor Full-Stack especializado em sites, apps e sistemas. React, Next.js, Node.js. Atendimento em todo Brasil!">
+    <meta property="twitter:image" content="https://leonardogarbuio.com.br/imagens/og-image.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Leonardo Garbuio",
+        "jobTitle": "Desenvolvedor Full-Stack",
+        "description": "Desenvolvedor Full-Stack especializado em criar sites profissionais, aplicações web e sistemas personalizados com React, Next.js, Node.js e TypeScript.",
+        "url": "https://leonardogarbuio.com.br",
+        "sameAs": [
+            "https://github.com/LeonardoGarbuio",
+            "https://linkedin.com/in/leonardogarbuio"
+        ],
+        "knowsAbout": ["React", "Next.js", "Node.js", "TypeScript", "JavaScript", "Python", "Java", "MongoDB", "MySQL"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR"
+        },
+        "offers": {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Desenvolvimento Web Full-Stack",
+                "description": "Criação de sites, aplicações web e sistemas personalizados"
+            }
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">LG</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#habilidades" class="nav-link">Habilidades</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projetos" class="nav-link">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contato" class="nav-link">Contato</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <!-- Floating Tech Badges -->
+        <div class="tech-badges-float">
+            <div class="tech-badge-float react">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+            </div>
+            <div class="tech-badge-float node">
+                <i class="fab fa-node-js"></i>
+                <span>Node.js</span>
+            </div>
+            <div class="tech-badge-float python">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+            </div>
+            <div class="tech-badge-float js">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Disponível para novos projetos</span>
+                </div>
+                <p class="hero-tagline">Desenvolvedor Full-Stack</p>
+                <h1 class="hero-title">
+                    Transformo suas <span class="highlight glow-text">ideias em código</span> que funciona
+                </h1>
+                <p class="hero-description">
+                    Desenvolvedor apaixonado por criar soluções web escaláveis e performáticas.
+                    Especializado em React, Node.js e arquiteturas modernas que impulsionam negócios.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Iniciar Projeto
+                    </a>
+                    <a href="#projetos" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i>
+                        Ver Portfólio
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <!-- Terminal Card -->
+                <div class="terminal-card">
+                    <div class="terminal-header">
+                        <div class="terminal-btn red"></div>
+                        <div class="terminal-btn yellow"></div>
+                        <div class="terminal-btn green"></div>
+                        <span class="terminal-title">leonardo@dev ~ </span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">→</span>
+                            <span class="terminal-command">whoami</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">Leonardo Garbuio</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">→</span>
+                            <span class="terminal-command">cat skills.txt</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">React | Next.js | TypeScript | Node.js | Tailwind |
+                                MongoDB</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">→</span>
+                            <span class="terminal-success">Pronto para seu projeto!</span>
+                            <span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Sobre Mim</h2>
+                <p class="section-subtitle">Conheça minha jornada e paixão pelo desenvolvimento</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-duration="800">
+                    <h3>Desenvolvedor Comprometido com a Excelência</h3>
+                    <p>
+                        Sou um desenvolvedor de software dedicado a criar soluções que fazem a diferença.
+                        Com anos de experiência em desenvolvimento full-stack, tenho uma abordagem focada
+                        em código limpo, arquitetura escalável e experiência do usuário excepcional.
+                    </p>
+                    <p>
+                        Minha filosofia é simples: cada linha de código deve ter um propósito claro e
+                        contribuir para uma solução robusta e eficiente. Trabalho com as tecnologias
+                        mais modernas para entregar produtos que superam as expectativas.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projetos Concluídos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Compromisso</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-duration="800">
+                    <div class="image-container">
+                        <div class="floating-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Desenvolvimento Web</h4>
+                        </div>
+                        <div class="floating-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Responsivo</h4>
+                        </div>
+                        <div class="floating-card">
+                            <i class="fas fa-database"></i>
+                            <h4>Backend</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Tecnologias & Ferramentas</h2>
+                <p class="section-subtitle">Stack moderna para criar soluções robustas e escaláveis</p>
+            </div>
+            <div class="skills-grid skills-grid-2col">
+                <!-- Frontend & Frameworks -->
+                <div class="skill-category skills-category-new" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="category-title">
+                        <i class="fas fa-palette"></i>
+                        Frontend & Frameworks
+                    </h3>
+                    <div class="skill-icons-grid">
+                        <div class="skill-icon-item html">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-icon-item css">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-icon-item js">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-icon-item typescript">
+                            <i class="fas fa-code"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-icon-item react">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-icon-item tailwind">
+                            <i class="fas fa-wind"></i>
+                            <span>Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & Databases -->
+                <div class="skill-category skills-category-new" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="category-title">
+                        <i class="fas fa-server"></i>
+                        Backend & Banco de Dados
+                    </h3>
+                    <div class="skill-icons-grid">
+                        <div class="skill-icon-item node">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-icon-item nextjs">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Next.js</span>
+                        </div>
+                        <div class="skill-icon-item python">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-icon-item mysql">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-icon-item mongo">
+                            <i class="fas fa-leaf"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-icon-item java">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ferramentas - Centralizado -->
+            <div class="skills-tools-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-category skills-category-new">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        Ferramentas
+                    </h3>
+                    <div class="skill-icons-grid">
+                        <div class="skill-icon-item git">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-icon-item github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-icon-item vscode">
+                            <i class="fas fa-code"></i>
+                            <span>VS Code</span>
+                        </div>
+                        <div class="skill-icon-item figma">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projetos" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <p class="section-subtitle">Aplicações reais que desenvolvi com tecnologias modernas</p>
+            </div>
+            <div class="projects-grid projects-grid-2col">
+                <!-- Prime AI -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-featured-badge">⭐ Destaque</div>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/LeonardoGarbuio/Prime_ai" target="_blank"
+                                    class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Prime AI</h3>
+                        <p class="project-description">
+                            Plataforma de análise com inteligência artificial, rotas especializadas
+                            para scanner de dados e integração com APIs de IA.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sites Venda -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/LeonardoGarbuio/sites-venda" target="_blank"
+                                    class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Landing Pages de Vendas</h3>
+                        <p class="project-description">
+                            Templates profissionais de landing pages e e-commerce com
+                            design responsivo e CI/CD automatizado.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flora dos Campos Gerais -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/LeonardoGarbuio/aFloraDosCamposGerais" target="_blank"
+                                    class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Flora dos Campos Gerais</h3>
+                        <p class="project-description">
+                            Plataforma educacional interativa sobre a flora regional,
+                            com cartilha digital e experiência imersiva.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Design Interativo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sistema Python -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/LeonardoGarbuio/projeto_python" target="_blank"
+                                    class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fab fa-python"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Gestão</h3>
+                        <p class="project-description">
+                            Sistema completo de gerenciamento para hamburgueria com
+                            cadastro de usuários, login e controle de pedidos.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Backend</span>
+                            <span class="tech-tag">Data Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta" data-aos="fade-up">
+                <a href="https://github.com/LeonardoGarbuio" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i>
+                    Ver Todos os 49 Projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Vamos Conversar?</h2>
+                <p class="section-subtitle">Estou sempre aberto a novas oportunidades e colaborações</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p>leonardogarbuiocavalheiro@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefone</h4>
+                            <p>(42) 99154-6824</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Localização</h4>
+                            <p>Paraná, Brasil</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/LeonardoGarbuio" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/leonardogarbuio" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/leonardogarbuio" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-container" data-aos="fade-left" data-aos-duration="800">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Nome Completo</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">E-mail</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Assunto</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Mensagem</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">LG</span>
+                    <p>Transformando ideias em código</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#habilidades">Skills</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/LeonardoGarbuio" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/leonardogarbuio" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/5542991546824" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Leonardo Garbuio. Feito com <i class="fas fa-heart"
+                        style="color: var(--primary-color);"></i> e muito código.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5542991546824?text=Olá! Vi seu portfólio e gostaria de conversar sobre um projeto."
+        target="_blank" class="whatsapp-float" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="javascript/main.js"></script>
+</body>
+
+</html>
