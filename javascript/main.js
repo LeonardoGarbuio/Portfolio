@@ -193,6 +193,60 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ===== TERMINAL TYPING ANIMATION =====
+    const terminalBody = document.querySelector('.terminal-body');
+    if (terminalBody) {
+        const terminalLines = terminalBody.querySelectorAll('.terminal-line');
+
+        // Hide all lines initially
+        terminalLines.forEach(line => {
+            line.style.opacity = '0';
+            line.style.transform = 'translateX(-10px)';
+        });
+
+        // Animate lines one by one after loading screen
+        setTimeout(() => {
+            let delay = 0;
+            terminalLines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    line.style.opacity = '1';
+                    line.style.transform = 'translateX(0)';
+
+                    // Type effect for commands
+                    const command = line.querySelector('.terminal-command');
+                    const success = line.querySelector('.terminal-success');
+
+                    if (command && command.textContent) {
+                        const text = command.textContent;
+                        command.textContent = '';
+                        typeTerminalText(command, text, 70);
+                    }
+
+                    if (success && success.textContent) {
+                        const text = success.textContent;
+                        success.textContent = '';
+                        typeTerminalText(success, text, 50);
+                    }
+                }, delay);
+
+                delay += 600; // Delay between lines
+            });
+        }, 1800);
+    }
+
+    function typeTerminalText(element, text, speed) {
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, speed);
+    }
+
     // ===== ANIMATED COUNTER FOR STATS =====
     const animateCounter = (element, target, duration = 2000) => {
         let start = 0;
