@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL SOLUTIONS | SaaS & Web Development</title>
+    <link rel="stylesheet" href="css/serverdev.css?v=23">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="noise-overlay"></div>
+    <div class="vignette"></div>
+
+    <!-- FIXED DRONE LAYER -->
+    <div id="drone-container" class="drone-fixed-layer"></div>
+
+    <main class="scrolly-container">
+
+        <!-- 1. HERO (Bots & Sites) -->
+        <section id="hero" class="sticky-section">
+            <div class="content-wrapper">
+                <div class="text-block" style="max-width: 600px;">
+                    <div class="badge-pill mb-4 fade-in-up">DIGITAL INNOVATION // V2.0</div>
+                    <h1 class="display-title fade-in-up delay-1">
+                        BUILD YOUR<br>
+                        <span class="text-gradient">DIGITAL EMPIRE</span><br>
+                        TODAY
+                    </h1>
+                    <p class="hero-mono mt-4 fade-in-up delay-2">
+                        High-performance SaaS, Dashboards e Landing Pages projetadas para converter.
+                        A tecnologia que sua empresa precisa para escalar.
+                    </p>
+                    <div class="btn-group mt-6 fade-in-up delay-3">
+                        <a href="#solutions" class="btn-minimal">VER SOLUÇÕES</a>
+                        <a href="https://wa.me/5542991546824?text=Olá! Vi seu site e tenho interesse em seus serviços."
+                            target="_blank" class="btn-minimal"
+                            style="background: white; color: black; margin-left: 12px;">FALAR NO WHATSAPP</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- (Skipping Sections 2, 3, 4 - keeping as is for now, they are specific) -->
+
+
+        <!-- 2. VERIFICATION (Bot de Verificação) -->
+        <section id="verification" class="sticky-section">
+            <div class="content-wrapper">
+                <div class="spacer-half"></div> <!-- Spacer Left for Drone -->
+                <div class="text-block text-left relative-top">
+                    <!-- Updated Label with Icon -->
+                    <div class="section-label"><i data-lucide="shield-check"></i> EXPERIÊNCIA PREMIUM | High-Ticket
+                        Sales</div>
+
+
+                    <h2 class="display-subtitle">POR QUE<br>INVESTIR?</h2>
+
+                    <p class="section-desc">
+                        Não entregamos apenas código. Entregamos ferramentas de vendas estratégicas,
+                        otimizadas para performance e conversão máxima.
+                    </p>
+
+                    <div class="duo-grid">
+                        <!-- Card 1 -->
+                        <div class="bento-item">
+                            <div class="icon-big red-glow">
+                                <i data-lucide="rocket"></i>
+                            </div>
+                            <h3>Ultra Performance</h3>
+                            <p>Sites e sistemas otimizados para carregar instantaneamente.
+                                Retenha seu cliente com uma experiência fluida e sem atritos.</p>
+                            <div class="bento-bg-glow red"></div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bento-item">
+                            <div class="icon-big red-glow">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h3>Alta Conversão</h3>
+                            <p>Design estratégico focado em vendas.
+                                Cada elemento é posicionado para guiar o visitante até o checkout.</p>
+                            <div class="bento-bg-glow red"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SALES (Automatize Vendas) -->
+        <section id="sales" class="sticky-section">
+            <div class="content-wrapper"> <!-- Content Left, Drone Right -->
+                <div class="text-block text-left">
+                    <h2 class="section-label">02 // CATALOG</h2>
+                    <h2 class="display-subtitle" id="solutions">NOSSAS SOLUÇÕES</h2>
+                    <p class="section-desc">
+                        Do simples ao complexo. Da Landing Page ao SaaS completo.
+                        Escolha a ferramenta certa para o estágio do seu negócio.
+                    </p>
+
+                    <div class="duo-grid">
+                        <!-- Card 1 -->
+                        <div class="bento-item">
+                            <div class="icon-big gold-glow">
+                                <i data-lucide="layout"></i>
+                            </div>
+                            <h3>Landing Pages</h3>
+                            <p>Páginas de Vendas One-Page, Portfólios e Institucionais.
+                                Design persuasivo para capturar leads e gerar vendas rápidas.</p>
+                            <div class="bento-bg-glow gold"></div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bento-item">
+                            <div class="icon-big gold-glow">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <h3>SaaS & Sistemas</h3>
+                            <p>Painéis Administrativos, CRMs, Dashboards e Apps completos.
+                                Soluções robustas com autenticação, banco de dados e APIs.</p>
+                            <div class="bento-bg-glow gold"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer-half"></div>
+            </div>
+        </section>
+
+        <!-- 4. WEBSITES (New Requirement) -->
+        <section id="websites" class="sticky-section">
+            <div class="content-wrapper row-reverse">
+                <div class="ambient-glow-left"></div>
+                <div class="text-block text-left relative-top">
+                    <h2 class="section-label">03 // PROCESS</h2>
+                    <h2 class="display-subtitle">COMO TRABALHAMOS</h2>
+                    <p class="section-desc">
+                        Metodologia ágil e transparente.
+                        Você acompanha cada etapa do desenvolvimento, do wireframe ao deploy.
+                    </p>
+
+                    <div class="duo-grid">
+                        <!-- Card 1 -->
+                        <div class="bento-item">
+                            <div class="icon-big blue-glow">
+                                <i data-lucide="code-2"></i>
+                            </div>
+                            <h3>Tecnologia de Ponta</h3>
+                            <p>Next.js, React, Node.js e Tailwind.
+                                Usamos a stack das maiores empresas de tecnologia do mundo.</p>
+                            <div class="bento-bg-glow blue"></div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bento-item">
+                            <div class="icon-big blue-glow">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <h3>Design System</h3>
+                            <p>Interfaces consistentes, dark mode nativo e componentes de UI que encantam seus usuários.
+                            </p>
+                            <div class="bento-bg-glow blue"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer-half"></div>
+            </div>
+        </section>
+
+        <!-- 5. ECONOMY/PLANS (Members & Economy) -->
+        <!-- 5. ECONOMY/PLANS (Comparison) -->
+        <section id="plans" class="sticky-section">
+            <div class="content-wrapper column ">
+                <div class="text-block" style="width: 100%; max-width: 600px; text-align: left;">
+                    <div class="section-label"><i data-lucide="sparkles"></i> INVESTIMENTOS</div>
+                    <h2 class="display-subtitle" style="font-size: 2.5rem;">PLANOS DE DESENVOLVIMENTO
+                    </h2>
+                    <p class="section-desc">
+                        Escolha o pacote ideal para o seu momento.
+                        Parcelamento disponível e suporte dedicado.
+                    </p>
+                </div>
+
+                <!-- PRICE FOCUS CARDS (New Design) -->
+                <div class="duo-grid">
+                    <!-- Bad Option -->
+                    <div class="bento-item price-card bad">
+                        <div class="price-header">STARTER</div>
+                        <div class="price-big negative">LANDING<small> PAGE</small></div>
+                        <div class="price-sub">Página de Alta Conversão</div>
+                        <div class="price-features">
+                            <span><i data-lucide="check"></i> Design Exclusivo</span>
+                            <span><i data-lucide="check"></i> Copywriting Básico</span>
+                            <span><i data-lucide="check"></i> Otimização SEO</span>
+                        </div>
+                        <div class="bento-bg-glow" style="background: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+
+                    <!-- Good Option -->
+                    <div class="bento-item price-card good">
+                        <div class="save-badge">MAIS POPULAR</div>
+                        <div class="price-header highlight">SYSTEM / SAAS</div>
+                        <div class="price-big positive">FULL<small> STACK</small></div>
+                        <div class="price-sub highlight">Sistemas Completos</div>
+                        <div class="price-features">
+                            <span><i data-lucide="check"></i> Dashboard Admin</span>
+                            <span><i data-lucide="check"></i> Autenticação & Banco de Dados</span>
+                            <span><i data-lucide="check"></i> Integração de Pagamentos</span>
+                        </div>
+                        <div class="bento-bg-glow gold"></div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="https://discord.gg/swvuvV6wmx" target="_blank" class="btn-minimal">Criar Meu Bot Agora</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="dock-wrapper">
+        <div class="dock">
+            <a href="index.html" class="dock-icon active">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <a href="portfolio.html" class="dock-icon">
+                <i data-lucide="briefcase"></i>
+                <span>Projetos</span>
+            </a>
+            <a href="servicos.html" class="dock-icon">
+                <i data-lucide="cpu"></i>
+                <span>Serviços</span>
+            </a>
+            <a href="planos.html" class="dock-icon">
+                <i data-lucide="credit-card"></i>
+                <span>Planos</span>
+            </a>
+        </div>
+    </nav>
+
+    <script type="module" src="js/serverdev.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
