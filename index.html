@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIGITAL SOLUTIONS | SaaS & Web Development</title>
-    <link rel="stylesheet" href="css/serverdev.css?v=23">
+    <title>Leonardo Garbuio Cavalheiro | Desenvolvedor de Software</title>
+    <link rel="stylesheet" href="css/portfolio.css?v=23">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -18,9 +19,42 @@
             }
         }
     </script>
+    <style>
+        .hero-layout {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .hero-layout {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-layout .text-block {
+                text-align: center !important;
+            }
+            .hero-layout .btn-group {
+                justify-content: center;
+            }
+            .hero-image {
+                margin-bottom: 30px;
+            }
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- LANGUAGE TOGGLE -->
+    <div id="langToggle" class="lang-toggle-btn" onclick="toggleLanguage()">
+        <span id="btn-en">EN</span><span style="opacity: 0.3;">|</span><span id="btn-pt" class="active">PT</span>
+    </div>
 
     <div class="noise-overlay"></div>
     <div class="vignette"></div>
@@ -30,199 +64,368 @@
 
     <main class="scrolly-container">
 
-        <!-- 1. HERO (Bots & Sites) -->
-        <section id="hero" class="sticky-section">
-            <div class="content-wrapper">
-                <div class="text-block" style="max-width: 600px;">
-                    <div class="badge-pill mb-4 fade-in-up">DIGITAL INNOVATION // V2.0</div>
-                    <h1 class="display-title fade-in-up delay-1">
-                        BUILD YOUR<br>
-                        <span class="text-gradient">DIGITAL EMPIRE</span><br>
-                        TODAY
+        <!-- 1. HERO -->
+        <section id="hero" class="sticky-section" style="display: flex; align-items: center; justify-content: flex-start; min-height: 100vh;">
+            <div class="content-wrapper" style="width: 100%; position: relative; z-index: 10;">
+                
+                <!-- Text Content -->
+                <div class="text-block" style="max-width: 550px; text-align: left;">
+                    
+                    <h1 class="hero-title fade-in-up delay-1" style="font-size: 4rem; line-height: 1.1; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.03em;">
+                        <span class="lang-pt">Olá, eu sou <br></span>
+                        <span class="lang-en">Hello, I am <br></span>
+                        <span class="text-gradient">Leonardo Garbuio</span>
                     </h1>
-                    <p class="hero-mono mt-4 fade-in-up delay-2">
-                        High-performance SaaS, Dashboards e Landing Pages projetadas para converter.
-                        A tecnologia que sua empresa precisa para escalar.
+                    <h2 class="hero-subtitle fade-in-up delay-2" style="font-size: 1.8rem; font-weight: 500; margin-bottom: 15px; color: #a1a1aa;">
+                        <span class="lang-pt">Desenvolvedor de Software</span>
+                        <span class="lang-en">Software Engineer</span>
+                    </h2>
+                    <p class="hero-mono mt-4 fade-in-up delay-2" style="font-size: 1.1rem; line-height: 1.6; text-transform: none;">
+                        <span class="lang-pt">Sou apaixonado por tecnologia e focado em criar soluções que fazem a diferença. Tenho experiência na construção de aplicações web e arquitetura de sistemas.</span>
+                        <span class="lang-en">Passionate about technology and focused on building solutions that make a difference. Experienced in web development and software architecture.</span>
                     </p>
-                    <div class="btn-group mt-6 fade-in-up delay-3">
-                        <a href="#solutions" class="btn-minimal">VER SOLUÇÕES</a>
-                        <a href="https://wa.me/5542991546824?text=Olá! Vi seu site e tenho interesse em seus serviços."
-                            target="_blank" class="btn-minimal"
-                            style="background: white; color: black; margin-left: 12px;">FALAR NO WHATSAPP</a>
+                    <div class="btn-group mt-6 fade-in-up delay-3" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="projects.html" class="btn-minimal" style="margin-left: 0;">
+                            <span class="lang-pt">VER PROJETOS</span>
+                            <span class="lang-en">VIEW PROJECTS</span>
+                        </a>
+                        <a href="mailto:leonardogarbuiocavalheiro@gmail.com" class="btn-minimal" style="background: white; color: black; margin-left: 0;">
+                            <span class="lang-pt">FALAR POR E-MAIL</span>
+                            <span class="lang-en">SEND AN E-MAIL</span>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- (Skipping Sections 2, 3, 4 - keeping as is for now, they are specific) -->
-
-
-        <!-- 2. VERIFICATION (Bot de Verificação) -->
-        <section id="verification" class="sticky-section">
+        <!-- 2. MINHAS SKILLS -->
+        <section id="skills" class="sticky-section">
             <div class="content-wrapper">
-                <div class="spacer-half"></div> <!-- Spacer Left for Drone -->
-                <div class="text-block text-left relative-top">
-                    <!-- Updated Label with Icon -->
-                    <div class="section-label"><i data-lucide="shield-check"></i> EXPERIÊNCIA PREMIUM | High-Ticket
-                        Sales</div>
+                <div class="spacer-half" style="flex-shrink: 0; width: 48%;"></div> <!-- Spacer Left for Drone -->
+                <div class="text-block text-center relative-top" style="width: 65%; max-width: 1050px; margin-right: auto; text-align: center;">
+                    <div class="section-label" style="margin: 0 auto 20px auto; display: inline-flex;">
+                        <i data-lucide="code"></i> 
+                        <span class="lang-pt" style="margin-left: 8px;">DESENVOLVIMENTO & ARQUITETURA</span>
+                        <span class="lang-en" style="margin-left: 8px;">DEVELOPMENT & ARCHITECTURE</span>
+                    </div>
 
+                    <h2 class="display-subtitle" style="text-align: center;">
+                        <span class="lang-pt">MINHAS<br>SKILLS</span>
+                        <span class="lang-en">MY<br>SKILLS</span>
+                    </h2>
 
-                    <h2 class="display-subtitle">POR QUE<br>INVESTIR?</h2>
-
-                    <p class="section-desc">
-                        Não entregamos apenas código. Entregamos ferramentas de vendas estratégicas,
-                        otimizadas para performance e conversão máxima.
+                    <p class="section-desc" style="text-align: center; margin: 0 auto;">
+                        <span class="lang-pt">Trabalho com as melhores tecnologias do mercado para criar aplicações robustas, escaláveis e com excelente experiência de usuário.</span>
+                        <span class="lang-en">I work with modern technologies to build robust, scalable applications with excellent user experiences.</span>
                     </p>
 
-                    <div class="duo-grid">
-                        <!-- Card 1 -->
-                        <div class="bento-item">
-                            <div class="icon-big red-glow">
-                                <i data-lucide="rocket"></i>
+                    <style>
+                        .tech-badge {
+                            background: rgba(255, 255, 255, 0.03);
+                            backdrop-filter: blur(10px);
+                            -webkit-backdrop-filter: blur(10px);
+                            border-radius: 12px;
+                            padding: 12px 8px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            border: 1px solid rgba(255, 255, 255, 0.08);
+                            transition: all 0.3s ease;
+                            width: 75px;
+                            height: 80px;
+                        }
+                        .tech-badge:hover {
+                            transform: translateY(-5px) scale(1.05);
+                            background: rgba(255, 255, 255, 0.08);
+                            border-color: rgba(255, 255, 255, 0.3);
+                            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                            z-index: 10;
+                        }
+                        .tech-badge i { font-size: 2.0rem; }
+                        .tech-badge span { font-size: 0.7rem; color: #a1a1aa; font-weight: 500; text-align: center; line-height: 1.1; }
+                    </style>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 30px;">
+                        
+                        <!-- BACKEND & LINGUAGENS -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-content: flex-start; gap: 10px;">
+                            <div style="width: 100%; text-align: center; margin-bottom: 10px;">
+                                <span class="lang-pt" style="font-size: 0.75rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">Backend & Linguagens</span>
+                                <span class="lang-en" style="font-size: 0.75rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">Backend & Languages</span>
                             </div>
-                            <h3>Ultra Performance</h3>
-                            <p>Sites e sistemas otimizados para carregar instantaneamente.
-                                Retenha seu cliente com uma experiência fluida e sem atritos.</p>
-                            <div class="bento-bg-glow red"></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-python-plain colored"></i><span>Python</span></div>
                         </div>
-                        <!-- Card 2 -->
-                        <div class="bento-item">
-                            <div class="icon-big red-glow">
-                                <i data-lucide="trending-up"></i>
+
+                        <!-- FRONTEND -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-content: flex-start; gap: 10px;">
+                            <div style="width: 100%; text-align: center; margin-bottom: 10px;">
+                                <span style="font-size: 0.75rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">Frontend / 3D</span>
                             </div>
-                            <h3>Alta Conversão</h3>
-                            <p>Design estratégico focado em vendas.
-                                Cada elemento é posicionado para guiar o visitante até o checkout.</p>
-                            <div class="bento-bg-glow red"></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-react-original colored"></i><span>React</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-nextjs-original" style="color: white;"></i><span>Next.js</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-threejs-original" style="color: white;"></i><span>Three.js</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
                         </div>
+
+                        <!-- BANCOS DE DADOS -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-content: flex-start; gap: 10px;">
+                            <div style="width: 100%; text-align: center; margin-bottom: 10px;">
+                                <span class="lang-pt" style="font-size: 0.75rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">Bancos de Dados</span>
+                                <span class="lang-en" style="font-size: 0.75rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">Databases</span>
+                            </div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-supabase-plain colored"></i><span>Supabase</span></div>
+                        </div>
+                        
+                        <!-- FERRAMENTAS & INFRA -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-content: flex-start; gap: 10px;">
+                            <div style="width: 100%; text-align: center; margin-bottom: 10px;">
+                                <span class="lang-pt" style="font-size: 0.75rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">Ferramentas & Infra</span>
+                                <span class="lang-en" style="font-size: 0.75rem; color: #a1a1aa; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">Tools & Infrastructure</span>
+                            </div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                            <div class="tech-badge fade-in-up"><i class="devicon-linux-plain" style="color: white;"></i><span>Linux</span></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. SALES (Automatize Vendas) -->
-        <section id="sales" class="sticky-section">
+        <!-- 3. ESPECIALIDADES -->
+        <section id="specialties" class="sticky-section">
             <div class="content-wrapper"> <!-- Content Left, Drone Right -->
-                <div class="text-block text-left">
-                    <h2 class="section-label">02 // CATALOG</h2>
-                    <h2 class="display-subtitle" id="solutions">NOSSAS SOLUÇÕES</h2>
-                    <p class="section-desc">
-                        Do simples ao complexo. Da Landing Page ao SaaS completo.
-                        Escolha a ferramenta certa para o estágio do seu negócio.
-                    </p>
+                <div class="text-block text-left relative-top" style="width: 65%; max-width: 1050px; margin-right: auto; margin-left: 10%;">
+                    <h2 class="section-label">
+                        <span class="lang-pt">02 // O QUE EU FAÇO</span>
+                        <span class="lang-en">02 // WHAT I DO</span>
+                    </h2>
+                    <h2 class="display-subtitle" id="solutions">
+                        <span class="lang-pt">ESPECIALIDADES</span>
+                        <span class="lang-en">SPECIALTIES</span>
+                    </h2>
 
-                    <div class="duo-grid">
-                        <!-- Card 1 -->
-                        <div class="bento-item">
-                            <div class="icon-big gold-glow">
-                                <i data-lucide="layout"></i>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                        
+                        <!-- BIG CARD (Span 2) -->
+                        <div style="grid-column: span 2; background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 40px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+                            <div style="max-width: 65%; z-index: 2;">
+                                <div style="display: inline-block; padding: 6px 14px; background: rgba(255, 215, 0, 0.1); color: #ffd700; border-radius: 20px; font-size: 0.7rem; font-weight: 700; margin-bottom: 20px; letter-spacing: 1.5px;">
+                                    <span class="lang-pt">FOCO PRINCIPAL</span>
+                                    <span class="lang-en">MAIN FOCUS</span>
+                                </div>
+                                <h3 style="font-size: 2rem; margin-bottom: 15px; font-weight: 800; letter-spacing: -1px;">
+                                    <span class="lang-pt">Arquitetura & Backend Robusto</span>
+                                    <span class="lang-en">Architecture & Robust Backend</span>
+                                </h3>
+                                <p style="color: #a1a1aa; font-size: 1.05rem; line-height: 1.6;">
+                                    <span class="lang-pt">Foco em desenvolvimento end-to-end e modelagem de banco de dados para resolver problemas de negócio de forma escalável. Experiência na construção de APIs e arquitetura de sistemas com TypeScript e Node.js.</span>
+                                    <span class="lang-en">Focused on end-to-end development and database modeling to solve business problems in a scalable way. Experience in building APIs and system architecture with TypeScript and Node.js.</span>
+                                </p>
                             </div>
-                            <h3>Landing Pages</h3>
-                            <p>Páginas de Vendas One-Page, Portfólios e Institucionais.
-                                Design persuasivo para capturar leads e gerar vendas rápidas.</p>
-                            <div class="bento-bg-glow gold"></div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="bento-item">
-                            <div class="icon-big gold-glow">
-                                <i data-lucide="cpu"></i>
+                            <div style="font-size: 10rem; opacity: 0.03; position: absolute; right: -10px; bottom: -40px; z-index: 1; transform: rotate(-15deg);">
+                                <i data-lucide="database"></i>
                             </div>
-                            <h3>SaaS & Sistemas</h3>
-                            <p>Painéis Administrativos, CRMs, Dashboards e Apps completos.
-                                Soluções robustas com autenticação, banco de dados e APIs.</p>
-                            <div class="bento-bg-glow gold"></div>
+                            <!-- Efeito de brilho no canto -->
+                            <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(255, 215, 0, 0.15); filter: blur(50px); border-radius: 50%;"></div>
                         </div>
+
+                        <!-- SMALL CARD 1 -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 30px; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+                            <div style="margin-bottom: 20px; color: #ffd700;">
+                                <i data-lucide="smartphone" style="width: 32px; height: 32px;"></i>
+                            </div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-weight: 700;">
+                                <span class="lang-pt">Front-end & Apps</span>
+                                <span class="lang-en">Frontend & Apps</span>
+                            </h3>
+                            <p style="color: #a1a1aa; font-size: 0.9rem; line-height: 1.6;">
+                                <span class="lang-pt">Transformo dados em experiências visuais. Crio interfaces modernas, aplicações web dinâmicas e apps responsivos que funcionam perfeitamente em qualquer tela ou dispositivo.</span>
+                                <span class="lang-en">I transform data into visual experiences. I build modern interfaces, dynamic web applications, and responsive apps that work perfectly on any screen or device.</span>
+                            </p>
+                        </div>
+
+                        <!-- SMALL CARD 2 -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 30px; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+                            <div style="margin-bottom: 20px; color: #ffd700;">
+                                <i data-lucide="shield-check" style="width: 32px; height: 32px;"></i>
+                            </div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-weight: 700;">
+                                <span class="lang-pt">Segurança & Infraestrutura</span>
+                                <span class="lang-en">Security & Infrastructure</span>
+                            </h3>
+                            <p style="color: #a1a1aa; font-size: 0.9rem; line-height: 1.6;">
+                                <span class="lang-pt">Implantação e gerenciamento na nuvem com foco em segurança. Configuração de redes e ambientes estáveis para manter os sistemas protegidos e altamente disponíveis.</span>
+                                <span class="lang-en">Cloud deployment and management with a focus on security. Network configuration and stable environments to keep systems protected and highly available.</span>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
-                <div class="spacer-half"></div>
             </div>
         </section>
 
-        <!-- 4. WEBSITES (New Requirement) -->
-        <section id="websites" class="sticky-section">
+        <!-- 4. EXPERIÊNCIA -->
+        <section id="experience" class="sticky-section">
             <div class="content-wrapper row-reverse">
                 <div class="ambient-glow-left"></div>
-                <div class="text-block text-left relative-top">
-                    <h2 class="section-label">03 // PROCESS</h2>
-                    <h2 class="display-subtitle">COMO TRABALHAMOS</h2>
+                <div class="text-block text-left relative-top" style="width: 65%; max-width: 1050px; margin-left: auto; margin-right: 10%;">
+                    <h2 class="section-label">
+                        <span class="lang-pt">03 // TRAJETÓRIA</span>
+                        <span class="lang-en">03 // TRAJECTORY</span>
+                    </h2>
+                    <h2 class="display-subtitle">
+                        <span class="lang-pt">EXPERIÊNCIA</span>
+                        <span class="lang-en">EXPERIENCE</span>
+                    </h2>
                     <p class="section-desc">
-                        Metodologia ágil e transparente.
-                        Você acompanha cada etapa do desenvolvimento, do wireframe ao deploy.
+                        <span class="lang-pt">Construindo uma base acadêmica sólida enquanto desenvolvo projetos reais que já estão em produção e sendo utilizados por pessoas na prática.</span>
+                        <span class="lang-en">Building a solid academic foundation while developing real projects that are already in production and being used by people in practice.</span>
                     </p>
 
-                    <div class="duo-grid">
-                        <!-- Card 1 -->
-                        <div class="bento-item">
-                            <div class="icon-big blue-glow">
-                                <i data-lucide="code-2"></i>
+                    <div class="timeline-container" style="margin-top: 40px; padding-left: 20px;">
+                        <div style="border-left: 2px solid rgba(255, 255, 255, 0.1); padding-left: 40px; position: relative;">
+                            
+                            <!-- EXPERIÊNCIA 1 -->
+                            <div style="position: relative; margin-bottom: 40px; transition: transform 0.3s ease;">
+                                <!-- Ponto na linha -->
+                                <div style="position: absolute; left: -49px; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: #ffd700; box-shadow: 0 0 15px rgba(255,215,0,0.4); z-index: 2;"></div>
+                                
+                                <span style="display: inline-block; padding: 4px 12px; background: rgba(255,215,0,0.1); color: #ffd700; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;">
+                                    <span class="lang-pt">ATUALMENTE</span>
+                                    <span class="lang-en">PRESENT</span>
+                                </span>
+                                <h3 style="font-size: 1.6rem; margin-bottom: 8px; font-weight: 800;">
+                                    <span class="lang-pt">Desenvolvedor Autônomo</span>
+                                    <span class="lang-en">Freelance Developer</span>
+                                </h3>
+                                <h4 style="font-size: 1rem; color: #fff; opacity: 0.8; margin-bottom: 15px; font-weight: 500;">
+                                    <span class="lang-pt">Projetos em Produção & Foco Internacional</span>
+                                    <span class="lang-en">Projects in Production & International Focus</span>
+                                </h4>
+                                <p style="color: #a1a1aa; line-height: 1.6; font-size: 1rem;">
+                                    <span class="lang-pt">Desenvolvimento de aplicações completas do zero ao deploy. Atualmente possuo <strong>3 projetos publicados e utilizados por usuários reais</strong>. Meu objetivo de curto prazo é conquistar uma vaga de <strong>Estágio nos EUA</strong>, aplicando minhas habilidades em um ambiente global e de alto nível.</span>
+                                    <span class="lang-en">End-to-end application development from scratch to deployment. I currently have <strong>3 published projects used by real users</strong>. My short-term goal is to secure a <strong>Software Engineering Internship in the US</strong>, applying my skills in a high-level global environment.</span>
+                                </p>
                             </div>
-                            <h3>Tecnologia de Ponta</h3>
-                            <p>Next.js, React, Node.js e Tailwind.
-                                Usamos a stack das maiores empresas de tecnologia do mundo.</p>
-                            <div class="bento-bg-glow blue"></div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="bento-item">
-                            <div class="icon-big blue-glow">
-                                <i data-lucide="layers"></i>
+
+                            <!-- EXPERIÊNCIA 2 -->
+                            <div style="position: relative; transition: transform 0.3s ease;">
+                                <!-- Ponto na linha -->
+                                <div style="position: absolute; left: -49px; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); z-index: 2;"></div>
+                                
+                                <span style="display: inline-block; padding: 4px 12px; background: rgba(255,255,255,0.05); color: #a1a1aa; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;">2023 - 2027</span>
+                                <h3 style="font-size: 1.6rem; margin-bottom: 8px; font-weight: 800;">
+                                    <span class="lang-pt">Técnico em Informática Integrado</span>
+                                    <span class="lang-en">Integrated IT Technician (High School)</span>
+                                </h3>
+                                <h4 style="font-size: 1rem; color: #fff; opacity: 0.8; margin-bottom: 15px; font-weight: 500;">
+                                    <span class="lang-pt">IFPR - Instituto Federal do Paraná</span>
+                                    <span class="lang-en">IFPR - Federal Institute of Paraná</span>
+                                </h4>
+                                <p style="color: #a1a1aa; line-height: 1.6; font-size: 1rem;">
+                                    <span class="lang-pt">Formação técnica de excelência aliada ao Ensino Médio. Construção de uma base sólida em lógica de programação, algoritmos, banco de dados e engenharia de software, vivenciando o ambiente acadêmico e prático simultaneamente.</span>
+                                    <span class="lang-en">Excellent technical education combined with High School. Building a solid foundation in programming logic, algorithms, databases, and software engineering, experiencing both academic and practical environments simultaneously.</span>
+                                </p>
                             </div>
-                            <h3>Design System</h3>
-                            <p>Interfaces consistentes, dark mode nativo e componentes de UI que encantam seus usuários.
-                            </p>
-                            <div class="bento-bg-glow blue"></div>
+
                         </div>
+                    </div>
+                    
+                    <div style="margin-top: 50px;">
+                        <a href="projects.html" class="btn-minimal" style="border-color: #ffd700; color: #ffd700; border-radius: 8px;">
+                            <span class="lang-pt">VER MEUS PROJETOS <i data-lucide="arrow-right" style="display:inline-block; vertical-align:middle; width:18px; height:18px; margin-left:8px;"></i></span>
+                            <span class="lang-en">VIEW MY PROJECTS <i data-lucide="arrow-right" style="display:inline-block; vertical-align:middle; width:18px; height:18px; margin-left:8px;"></i></span>
+                        </a>
                     </div>
                 </div>
                 <div class="spacer-half"></div>
             </div>
         </section>
 
-        <!-- 5. ECONOMY/PLANS (Members & Economy) -->
-        <!-- 5. ECONOMY/PLANS (Comparison) -->
-        <section id="plans" class="sticky-section">
-            <div class="content-wrapper column ">
-                <div class="text-block" style="width: 100%; max-width: 600px; text-align: left;">
-                    <div class="section-label"><i data-lucide="sparkles"></i> INVESTIMENTOS</div>
-                    <h2 class="display-subtitle" style="font-size: 2.5rem;">PLANOS DE DESENVOLVIMENTO
+        <!-- 5. CONTATO -->
+        <section id="contact" class="sticky-section">
+            <div class="content-wrapper"> 
+                <div class="text-block text-left relative-top" style="width: 65%; max-width: 1050px; margin-right: auto; margin-left: 5%;">
+                    <div class="section-label" style="margin-bottom: 15px; display: inline-flex; color: #ffd700; border-color: rgba(255,215,0,0.3);"><i data-lucide="globe"></i> US INTERNSHIP OPPORTUNITIES</div>
+                    <h2 class="display-subtitle" style="font-size: 3.5rem; margin-bottom: 15px; letter-spacing: -1px;">
+                        <span class="lang-pt">VAMOS CONVERSAR</span>
+                        <span class="lang-en">LET'S CONNECT</span>
                     </h2>
-                    <p class="section-desc">
-                        Escolha o pacote ideal para o seu momento.
-                        Parcelamento disponível e suporte dedicado.
+                    <p class="section-desc" style="max-width: 550px; font-size: 1.1rem;">
+                        <span class="lang-pt">Estou buscando uma oportunidade de <strong>Estágio em Engenharia de Software nos EUA</strong>. Se você tem uma vaga, quer ver meu currículo ou apenas conversar sobre tecnologia, minha caixa de entrada está aberta!</span>
+                        <span class="lang-en">I am currently seeking a <strong>Software Engineering Internship in the US</strong>. Whether you have an open position, want to see my resume, or just want to talk about tech, my inbox is always open!</span>
                     </p>
-                </div>
 
-                <!-- PRICE FOCUS CARDS (New Design) -->
-                <div class="duo-grid">
-                    <!-- Bad Option -->
-                    <div class="bento-item price-card bad">
-                        <div class="price-header">STARTER</div>
-                        <div class="price-big negative">LANDING<small> PAGE</small></div>
-                        <div class="price-sub">Página de Alta Conversão</div>
-                        <div class="price-features">
-                            <span><i data-lucide="check"></i> Design Exclusivo</span>
-                            <span><i data-lucide="check"></i> Copywriting Básico</span>
-                            <span><i data-lucide="check"></i> Otimização SEO</span>
-                        </div>
-                        <div class="bento-bg-glow" style="background: rgba(255, 255, 255, 0.1);"></div>
+                    <!-- US Focused Action Buttons -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px;">
+                        
+                        <!-- Resume Download (Crucial for US) -->
+                        <a href="resume.pdf" target="_blank" style="text-decoration: none; display: block; grid-column: span 2;">
+                            <div style="padding: 20px 30px; text-align: left; border: 1px solid rgba(255,215,0,0.4); background: rgba(255,215,0,0.05); border-radius: 16px; transition: all 0.3s ease; cursor: pointer; display: flex; align-items: center; justify-content: space-between;" onmouseover="this.style.background='rgba(255,215,0,0.1)'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,215,0,0.05)'; this.style.transform='translateY(0)';">
+                                <div>
+                                    <h3 style="font-size: 1.3rem; margin-bottom: 5px; color: #ffd700; font-weight: 800;">
+                                        <span class="lang-pt">Baixar Currículo (EN)</span>
+                                        <span class="lang-en">Download Resume (EN)</span>
+                                    </h3>
+                                    <p style="color: #a1a1aa; font-size: 0.95rem; margin: 0;">
+                                        <span class="lang-pt">Acesse meu CV completo em formato PDF.</span>
+                                        <span class="lang-en">Get my full CV in PDF format for HR and technical screening.</span>
+                                    </p>
+                                </div>
+                                <div style="color: #ffd700; background: rgba(255,215,0,0.1); padding: 15px; border-radius: 50%;">
+                                    <i data-lucide="download" style="width: 24px; height: 24px;"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/leonardo-garbuio-cavalheiro-207b70327/" target="_blank" style="text-decoration: none; display: block;">
+                            <div style="padding: 25px; text-align: left; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); border-radius: 16px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.03)';">
+                                <div style="color: #0a66c2; margin-bottom: 12px;">
+                                    <i data-lucide="linkedin" style="width: 28px; height: 28px;"></i>
+                                </div>
+                                <h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #fff; font-weight: 700;">LinkedIn</h3>
+                                <p style="color: #a1a1aa; font-size: 0.85rem; margin: 0;">
+                                    <span class="lang-pt">Perfil Profissional</span>
+                                    <span class="lang-en">Professional profile</span>
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/LeonardoGarbuio" target="_blank" style="text-decoration: none; display: block;">
+                            <div style="padding: 25px; text-align: left; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); border-radius: 16px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.03)';">
+                                <div style="color: #fff; margin-bottom: 12px;">
+                                    <i data-lucide="github" style="width: 28px; height: 28px;"></i>
+                                </div>
+                                <h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #fff; font-weight: 700;">GitHub</h3>
+                                <p style="color: #a1a1aa; font-size: 0.85rem; margin: 0;">
+                                    <span class="lang-pt">Código e Contribuições</span>
+                                    <span class="lang-en">Code & Contributions</span>
+                                </p>
+                            </div>
+                        </a>
+                        
                     </div>
 
-                    <!-- Good Option -->
-                    <div class="bento-item price-card good">
-                        <div class="save-badge">MAIS POPULAR</div>
-                        <div class="price-header highlight">SYSTEM / SAAS</div>
-                        <div class="price-big positive">FULL<small> STACK</small></div>
-                        <div class="price-sub highlight">Sistemas Completos</div>
-                        <div class="price-features">
-                            <span><i data-lucide="check"></i> Dashboard Admin</span>
-                            <span><i data-lucide="check"></i> Autenticação & Banco de Dados</span>
-                            <span><i data-lucide="check"></i> Integração de Pagamentos</span>
-                        </div>
-                        <div class="bento-bg-glow gold"></div>
+                    <!-- Email Only (US Standard) -->
+                    <div style="margin-top: 20px;">
+                        <a href="mailto:leonardogarbuiocavalheiro@gmail.com" class="btn-minimal" style="width: 100%; text-align: center; justify-content: center; background: white; color: black; font-weight: 700; padding: 18px 0; display: flex; align-items: center;">
+                            <i data-lucide="mail" style="margin-right: 10px;"></i> 
+                            <span class="lang-pt">Me envie um E-mail</span>
+                            <span class="lang-en">Send me an Email</span>
+                        </a>
                     </div>
-                </div>
 
-                <div style="text-align: center; margin-top: 60px;">
-                    <a href="https://discord.gg/swvuvV6wmx" target="_blank" class="btn-minimal">Criar Meu Bot Agora</a>
                 </div>
             </div>
         </section>
@@ -233,25 +436,48 @@
         <div class="dock">
             <a href="index.html" class="dock-icon active">
                 <i data-lucide="home"></i>
-                <span>Home</span>
+                <span class="lang-pt">Início</span><span class="lang-en">Home</span>
             </a>
-            <a href="portfolio.html" class="dock-icon">
+            <a href="#skills" class="dock-icon">
+                <i data-lucide="code"></i>
+                <span>Skills</span>
+            </a>
+            <a href="projects.html" class="dock-icon">
+                <i data-lucide="folder-code"></i>
+                <span class="lang-pt">Projetos</span><span class="lang-en">Projects</span>
+            </a>
+            <a href="#experience" class="dock-icon">
                 <i data-lucide="briefcase"></i>
-                <span>Projetos</span>
+                <span class="lang-pt">Experiência</span><span class="lang-en">Experience</span>
             </a>
-            <a href="servicos.html" class="dock-icon">
-                <i data-lucide="cpu"></i>
-                <span>Serviços</span>
-            </a>
-            <a href="planos.html" class="dock-icon">
-                <i data-lucide="credit-card"></i>
-                <span>Planos</span>
+            <a href="#contact" class="dock-icon">
+                <i data-lucide="mail"></i>
+                <span class="lang-pt">Contato</span><span class="lang-en">Contact</span>
             </a>
         </div>
     </nav>
 
-    <script type="module" src="js/serverdev.js"></script>
+    <script type="module" src="js/portfolio.js"></script>
     <script>lucide.createIcons();</script>
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang') || 'pt';
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('lang', newLang);
+            
+            document.getElementById('btn-en').className = newLang === 'en' ? 'active' : '';
+            document.getElementById('btn-pt').className = newLang === 'pt' ? 'active' : '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'pt';
+            document.documentElement.setAttribute('lang', savedLang);
+            document.getElementById('btn-en').className = savedLang === 'en' ? 'active' : '';
+            document.getElementById('btn-pt').className = savedLang === 'pt' ? 'active' : '';
+        });
+    </script>
 </body>
 
 </html>

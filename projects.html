@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Leonardo Cavalheiro | Software Engineer</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/serverdev.css">
+    
+    <style>
+        /* Efeito de Scroll Magnético na página toda */
+        html {
+            /* 'proximity' é mais suave que 'mandatory', permitindo liberação rápida */
+            scroll-snap-type: y proximity;
+        }
+
+        /* Simple Grid Layout */
+        .projects-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding-bottom: 10vh;
+        }
+
+        .project-card {
+            position: relative;
+            height: 65vh;
+            min-height: 500px;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #09090b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .project-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Hover zoom effect on the background only */
+        .project-card:hover .project-bg {
+            transform: scale(1.05);
+        }
+
+        /* Placeholder icon until real images are added */
+        .project-bg-icon {
+            width: 120px;
+            height: 120px;
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Dark vignette at the bottom to ensure text readability */
+        .project-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.1) 100%);
+            z-index: 2;
+        }
+
+        /* The actual content floating at the bottom */
+        .project-content {
+            position: relative;
+            z-index: 3;
+            padding: 60px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .project-text {
+            flex: 1;
+            max-width: 800px;
+        }
+
+        .tech-badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tech-badge.highlight {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.4);
+            color: #ffd700;
+        }
+
+        .project-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            color: #fff;
+        }
+
+        .project-description {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 200px;
+        }
+
+        .project-btn {
+            padding: 16px 24px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-live {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+        }
+        
+        .btn-live:hover {
+            background: #ffd700;
+            box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-repo {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-repo:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 900px) {
+            .project-content {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 30px;
+            }
+            .project-title { font-size: 2.5rem; }
+            .project-actions { width: 100%; flex-direction: row; flex-wrap: wrap; }
+            .project-btn { flex: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- LANGUAGE TOGGLE -->
+    <div id="langToggle" class="lang-toggle-btn" onclick="toggleLanguage()">
+        <span id="btn-en">EN</span><span style="opacity: 0.3;">|</span><span id="btn-pt" class="active">PT</span>
+    </div>
+
+    <div class="noise-overlay"></div>
+    <div class="vignette"></div>
+
+    <main>
+        <section style="padding-top: 100px;">
+            <div class="content-wrapper column">
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    
+                    <!-- HEADER -->
+                    <div class="text-center" style="margin-bottom: 80px;">
+                        <div class="section-label" style="margin-bottom: 20px; display: inline-flex;"><i data-lucide="folder-code"></i> PORTFOLIO</div>
+                        <h2 class="display-title text-gradient" style="font-size: 4.5rem; letter-spacing: -2px;">
+                            <span class="lang-pt">Meus Projetos</span>
+                            <span class="lang-en">My Projects</span>
+                        </h2>
+                        <p class="section-desc" style="max-width: 600px; margin: 0 auto;">
+                            <span class="lang-pt">Role para baixo para ver. Projetos desenvolvidos de ponta a ponta com foco em performance e arquitetura escalável.</span>
+                            <span class="lang-en">Scroll down to explore. End-to-end development focused on performance and scalable architecture.</span>
+                        </p>
+                    </div>
+
+                    <!-- THE STACKING DECK -->
+                    <div class="projects-wrapper">
+                        
+                        <!-- PROJECT 1: Lab 3D -->
+                        <div class="project-card">
+                            <div class="project-bg">
+                                <i data-lucide="box" class="project-bg-icon"></i>
+                            </div>
+                            <div class="project-overlay"></div>
+                            
+                            <div class="project-content">
+                                <div class="project-text">
+                                    <div class="tech-badge-container">
+                                        <span class="tech-badge highlight"><i class="devicon-react-original"></i> React</span>
+                                        <span class="tech-badge"><i class="devicon-threejs-original" style="color:white;"></i> Three.js</span>
+                                        <span class="tech-badge">Zustand</span>
+                                        <span class="tech-badge"><i class="devicon-supabase-plain"></i> Supabase</span>
+                                    </div>
+                                    <h3 class="project-title">Lab 3D</h3>
+                                    <p class="project-description">
+                                        <span class="lang-pt">Um laboratório virtual de química com simulação, missões, segurança e motor químico. Uma experiência imersiva focada em performance e realismo.</span>
+                                        <span class="lang-en">A virtual chemistry lab featuring simulation, missions, safety protocols, and a chemical engine. An immersive experience focused on performance and realism.</span>
+                                    </p>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="lab3d.html" class="project-btn btn-live">
+                                        <span class="lang-pt">Ver estudo de caso</span><span class="lang-en">View case study</span>
+                                        <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                                    </a>
+                                    <div class="project-btn btn-repo" style="cursor: not-allowed; opacity: 0.7;">
+                                        <span class="lang-pt"><i data-lucide="lock" style="width: 16px; height: 16px; margin-right: 6px; display: inline-block; vertical-align: middle;"></i> Código privado</span>
+                                        <span class="lang-en"><i data-lucide="lock" style="width: 16px; height: 16px; margin-right: 6px; display: inline-block; vertical-align: middle;"></i> Proprietary project</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 2: PatchPilot -->
+                        <div class="project-card">
+                            <div class="project-bg">
+                                <i data-lucide="terminal" class="project-bg-icon"></i>
+                            </div>
+                            <div class="project-overlay"></div>
+                            
+                            <div class="project-content">
+                                <div class="project-text">
+                                    <div class="tech-badge-container">
+                                        <span class="tech-badge highlight"><i class="devicon-typescript-plain"></i> TypeScript</span>
+                                        <span class="tech-badge"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                                        <span class="tech-badge"><i class="devicon-docker-plain"></i> Docker</span>
+                                    </div>
+                                    <h3 class="project-title">PatchPilot</h3>
+                                    <p class="project-description">
+                                        <span class="lang-pt">Um agente de software baseado em IA para análise e modificação de código (Monorepo). Utiliza containers isolados (Docker) para execução segura de código e integra com LLMs que geram alterações para aprovação humana.</span>
+                                        <span class="lang-en">An AI-powered software agent for code analysis and modification (Monorepo). Uses isolated containers (Docker) for safe code execution and integrates with LLMs that generate changes for human approval.</span>
+                                    </p>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/LeonardoGarbuio/PatchPilot" target="_blank" class="project-btn btn-repo">
+                                        Repository
+                                        <i data-lucide="github" style="width: 18px; height: 18px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 3 -->
+                        <div class="project-card">
+                            <div class="project-bg">
+                                <i data-lucide="smartphone" class="project-bg-icon"></i>
+                            </div>
+                            <div class="project-overlay"></div>
+                            
+                            <div class="project-content">
+                                <div class="project-text">
+                                    <div class="tech-badge-container">
+                                        <span class="tech-badge highlight"><i class="devicon-nextjs-original"></i> Next.js</span>
+                                        <span class="tech-badge"><i class="devicon-tailwindcss-plain"></i> Tailwind CSS</span>
+                                        <span class="tech-badge"><i class="devicon-amazonwebservices-original"></i> AWS</span>
+                                    </div>
+                                    <h3 class="project-title">Nome do Projeto 3</h3>
+                                    <p class="project-description">
+                                        <span class="lang-pt">[Placeholder] Uma breve e impactante descrição do que este projeto faz. Como ele resolve um problema real usando arquitetura de alto nível.</span>
+                                        <span class="lang-en">[Placeholder] A short, impactful description of what this project does. How it solves a real problem using high-level architecture.</span>
+                                    </p>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="#" class="project-btn btn-repo">
+                                        Repository
+                                        <i data-lucide="github" style="width: 18px; height: 18px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div style="text-align: center; margin-bottom: 100px;">
+                        <a href="index.html" class="btn-minimal" style="border-radius: 8px; border-color: rgba(255,255,255,0.2);">
+                            <span class="lang-pt"><i data-lucide="arrow-left" style="width:16px; margin-right:8px; display:inline-block; vertical-align:middle;"></i> VOLTAR PARA O INÍCIO</span>
+                            <span class="lang-en"><i data-lucide="arrow-left" style="width:16px; margin-right:8px; display:inline-block; vertical-align:middle;"></i> BACK TO HOME</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>lucide.createIcons();</script>
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang') || 'pt';
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('lang', newLang);
+            
+            document.getElementById('btn-en').className = newLang === 'en' ? 'active' : '';
+            document.getElementById('btn-pt').className = newLang === 'pt' ? 'active' : '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'pt';
+            document.documentElement.setAttribute('lang', savedLang);
+            document.getElementById('btn-en').className = savedLang === 'en' ? 'active' : '';
+            document.getElementById('btn-pt').className = savedLang === 'pt' ? 'active' : '';
+        });
+    </script>
+</body>
+
+</html>

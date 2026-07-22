@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3D - Estudo de Caso | Leonardo Cavalheiro</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/serverdev.css">
+    <style>
+        .case-study-header {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+
+        .media-placeholder {
+            width: 100%;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            margin: 40px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .media-placeholder.video {
+            aspect-ratio: 16/9;
+        }
+
+        .media-placeholder.image {
+            aspect-ratio: 2/1;
+        }
+
+        .section-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .section-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-box p, .section-box ul {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .section-box ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+        
+        .section-box li {
+            margin-bottom: 10px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- LANGUAGE TOGGLE -->
+    <div id="langToggle" class="lang-toggle-btn" onclick="toggleLanguage()">
+        <span id="btn-en">EN</span><span style="opacity: 0.3;">|</span><span id="btn-pt" class="active">PT</span>
+    </div>
+
+    <div class="noise-overlay"></div>
+    <div class="vignette"></div>
+
+    <main>
+        <div class="content-wrapper column">
+            <div style="width: 100%; max-width: 900px; margin: 0 auto;">
+                
+                <!-- HEADER -->
+                <div class="case-study-header">
+                    <div class="section-label" style="margin-bottom: 20px; display: inline-flex;">
+                        <i data-lucide="lock"></i> <span class="lang-pt">CÓDIGO PRIVADO / PROPRIETARY</span><span class="lang-en">PROPRIETARY PROJECT</span>
+                    </div>
+                    <h1 class="display-title text-gradient" style="font-size: 4rem; letter-spacing: -1.5px; margin-bottom: 20px;">
+                        Lab 3D
+                    </h1>
+                    <p class="section-desc" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+                        <span class="lang-pt">Estudo de caso detalhando o desenvolvimento de um laboratório virtual interativo em 3D. O código fonte deste projeto é privado por questões de propriedade intelectual, mas os detalhes arquitetônicos e resultados estão compartilhados abaixo.</span>
+                        <span class="lang-en">Case study detailing the development of an interactive 3D virtual laboratory. The source code for this project is private due to intellectual property, but architectural details and results are shared below.</span>
+                    </p>
+                </div>
+
+                <!-- VIDEO DEMO -->
+                <div class="media-placeholder video">
+                    <div style="text-align: center;">
+                        <i data-lucide="play-circle" style="width: 48px; height: 48px; margin-bottom: 15px; display: block; margin: 0 auto 15px auto;"></i>
+                        <span class="lang-pt">[Adicione o vídeo de demonstração aqui]</span>
+                        <span class="lang-en">[Add demo video here]</span>
+                    </div>
+                </div>
+
+                <!-- PROBLEMA RESOLVIDO -->
+                <div class="section-box">
+                    <h3><i data-lucide="target"></i> <span class="lang-pt">Problema Resolvido</span><span class="lang-en">Problem Solved</span></h3>
+                    <p>
+                        <span class="lang-pt">O ensino de química frequentemente sofre com a falta de acesso a laboratórios físicos, materiais caros e riscos de segurança. O Lab 3D foi desenvolvido para fornecer uma alternativa segura, acessível e realista, permitindo que estudantes realizem experimentos complexos em um ambiente virtual imersivo sem restrições físicas.</span>
+                        <span class="lang-en">Chemistry education often suffers from a lack of access to physical labs, expensive materials, and safety risks. Lab 3D was developed to provide a safe, accessible, and realistic alternative, allowing students to conduct complex experiments in an immersive virtual environment without physical constraints.</span>
+                    </p>
+                </div>
+
+                <!-- IMAGENS -->
+                <div class="media-placeholder image">
+                    <div style="text-align: center;">
+                        <i data-lucide="image" style="width: 48px; height: 48px; margin-bottom: 15px; display: block; margin: 0 auto 15px auto;"></i>
+                        <span class="lang-pt">[Adicione imagens/screenshots do projeto aqui]</span>
+                        <span class="lang-en">[Add project images/screenshots here]</span>
+                    </div>
+                </div>
+
+                <!-- ARQUITETURA -->
+                <div class="section-box">
+                    <h3><i data-lucide="layout-template"></i> <span class="lang-pt">Arquitetura do Sistema</span><span class="lang-en">System Architecture</span></h3>
+                    <p>
+                        <span class="lang-pt">O sistema foi arquitetado para priorizar alta performance no navegador, essencial para renderização 3D fluida.</span>
+                        <span class="lang-en">The system was architected to prioritize high performance in the browser, which is essential for fluid 3D rendering.</span>
+                    </p>
+                    <ul>
+                        <li><strong>Frontend:</strong> <span class="lang-pt">React gerencia o estado da UI e componentes HTML, enquanto o ecossistema Three.js (via React Three Fiber) cuida do canvas WebGL.</span><span class="lang-en">React manages UI state and HTML components, while the Three.js ecosystem (via React Three Fiber) handles the WebGL canvas.</span></li>
+                        <li><strong>State Management:</strong> <span class="lang-pt">Zustand é utilizado para gerenciar estados globais (progresso de missões, inventário) fora do loop de renderização para evitar re-renders desnecessários.</span><span class="lang-en">Zustand is used to manage global states (mission progress, inventory) outside the render loop to prevent unnecessary re-renders.</span></li>
+                        <li><strong>Backend:</strong> <span class="lang-pt">Supabase atua como backend as a service (BaaS) lidando com autenticação e persistência de dados.</span><span class="lang-en">Supabase acts as a backend as a service (BaaS) handling authentication and data persistence.</span></li>
+                    </ul>
+                </div>
+
+                <!-- TECNOLOGIAS -->
+                <div class="section-box">
+                    <h3><i data-lucide="cpu"></i> <span class="lang-pt">Tecnologias Utilizadas</span><span class="lang-en">Technologies Used</span></h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="devicon-react-original colored"></i>
+                            React
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-threejs-original" style="color: white;"></i>
+                            Three.js
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-javascript-plain colored"></i>
+                            Zustand
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-supabase-plain colored"></i>
+                            Supabase
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTES E RESULTADOS -->
+                <div class="section-box">
+                    <h3><i data-lucide="check-circle-2"></i> <span class="lang-pt">Testes e Resultados</span><span class="lang-en">Tests & Results</span></h3>
+                    <p>
+                        <span class="lang-pt">Durante o desenvolvimento e homologação:</span>
+                        <span class="lang-en">During development and validation:</span>
+                    </p>
+                    <ul>
+                        <li><span class="lang-pt">Garantia de <strong>60 FPS</strong> contínuos em dispositivos mid-range através de otimizações de instanciamento e redução de draw calls.</span><span class="lang-en">Guaranteed continuous <strong>60 FPS</strong> on mid-range devices through instancing optimizations and draw call reduction.</span></li>
+                        <li><span class="lang-pt">Validação positiva do <strong>Motor Químico</strong> implementado, capaz de simular reações lógicas e interações entre diferentes elementos e equipamentos.</span><span class="lang-en">Positive validation of the implemented <strong>Chemical Engine</strong>, capable of simulating logical reactions and interactions between different elements and equipment.</span></li>
+                        <li><span class="lang-pt">Feedback de usuários indicou um aumento significativo no engajamento ao realizar experimentos de forma gamificada.</span><span class="lang-en">User feedback indicated a significant increase in engagement when performing experiments in a gamified manner.</span></li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 100px; margin-top: 50px;">
+                    <a href="projects.html" class="btn-minimal" style="border-radius: 8px; border-color: rgba(255,255,255,0.2);">
+                        <span class="lang-pt"><i data-lucide="arrow-left" style="width:16px; margin-right:8px; display:inline-block; vertical-align:middle;"></i> VOLTAR PARA PROJETOS</span>
+                        <span class="lang-en"><i data-lucide="arrow-left" style="width:16px; margin-right:8px; display:inline-block; vertical-align:middle;"></i> BACK TO PROJECTS</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>lucide.createIcons();</script>
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang') || 'pt';
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('lang', newLang);
+            
+            document.getElementById('btn-en').className = newLang === 'en' ? 'active' : '';
+            document.getElementById('btn-pt').className = newLang === 'pt' ? 'active' : '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'pt';
+            document.documentElement.setAttribute('lang', savedLang);
+            document.getElementById('btn-en').className = savedLang === 'en' ? 'active' : '';
+            document.getElementById('btn-pt').className = savedLang === 'pt' ? 'active' : '';
+        });
+    </script>
+</body>
+
+</html>
