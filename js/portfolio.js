@@ -220,6 +220,22 @@ if (container) {
     renderer.setSize(container.clientWidth, container.clientHeight);
   });
 
+  // Keep the drone as a subtle background element while projects are in focus.
+  const projectsSection = document.getElementById("projects");
+  if (projectsSection) {
+    const projectsObserver = new IntersectionObserver(
+      ([entry]) => {
+        document.body.classList.toggle(
+          "projects-focus",
+          entry.isIntersecting && entry.intersectionRatio > 0.2,
+        );
+      },
+      { threshold: [0.2, 0.5] },
+    );
+
+    projectsObserver.observe(projectsSection);
+  }
+
   // 8. Navigation Active State
   // DISABLED for Multi-Page Structure (Pages have hardcoded active states)
   /*

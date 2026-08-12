@@ -9,7 +9,7 @@
 
 This portfolio is built to showcase my backend and software architecture skills, while maintaining an immersive and optimized frontend experience. It features a 3D animated drone rendered with WebGL (Three.js), tied to the user's scroll position (GSAP) to create a "storytelling" experience as recruiters navigate through the site.
 
-The site is designed with a **"Less is More"** philosophy, focusing strictly on verifiable projects (Lab 3D, PatchPilot), core tech stacks, and performance optimization.
+The site is designed with a **"Less is More"** philosophy, focusing strictly on verifiable projects (Lab 3D, PatchPilot, and ReplayOps), core tech stacks, and performance optimization.
 
 ## 🛠️ Technology Stack
 
