@@ -237,7 +237,50 @@ if (container) {
   }
 
   // 8. Navigation Active State
-  // DISABLED for Multi-Page Structure (Pages have hardcoded active states)
+  // Keep the dock synchronized with the section currently occupying the
+  // reading area instead of leaving the Home item active forever.
+  const sections = [...document.querySelectorAll(".sticky-section[id]")];
+  const navLinks = [...document.querySelectorAll(".dock-icon[href^='#']")];
+
+  if (sections.length && navLinks.length) {
+    const setActiveSection = (id) => {
+      // Some content sections share one navigation destination.
+      const navTarget = id === "specialties" ? "skills" : id;
+
+      navLinks.forEach((link) => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === `#${navTarget}`,
+        );
+      });
+    };
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        // The section intersecting the upper reading band is the active one.
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      { rootMargin: "-22% 0px -62% 0px", threshold: [0, 0.1, 0.25, 0.5] },
+    );
+
+    sections.forEach((section) => sectionObserver.observe(section));
+
+    const syncHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash && sections.some((section) => section.id === hash)) {
+        setActiveSection(hash);
+      }
+    };
+
+    window.addEventListener("hashchange", syncHash);
+    syncHash();
+  }
   /*
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.dock-icon');
